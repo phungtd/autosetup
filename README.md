@@ -33,7 +33,7 @@ Script tự động hóa quy trình thiết lập website trên CyberPanel, bao 
 
 1. Clone repo
 ```bash
-git clone https://github.com/your-username/autosetup.git
+git clone https://github.com/phungtd/autosetup.git
 cd autosetup
 ```
 
