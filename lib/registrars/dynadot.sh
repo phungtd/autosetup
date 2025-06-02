@@ -20,21 +20,6 @@ if [ -z "$DYNADOT_API_KEY" ]; then
     fi
 fi
 
-# Install jq if not installed
-command -v jq >/dev/null 2>&1 || {
-    sudo apt-get install -y jq >/dev/null 2>&1 ||
-        sudo yum install -y jq >/dev/null 2>&1 ||
-        sudo dnf install -y jq >/dev/null 2>&1 ||
-        sudo pacman -S --noconfirm jq >/dev/null 2>&1 ||
-        sudo apk add jq >/dev/null 2>&1
-}
-
-# Check if jq is installed
-if ! command -v jq >/dev/null 2>&1; then
-    log_error "jq is not installed"
-    exit 1
-fi
-
 # Function to make API calls to Dynadot
 dynadot_api_call() {
     # Input parameters
