@@ -236,7 +236,8 @@ extract_source() {
 
     # Set proper permissions
     log_info "Setting permissions..."
-    chown -R "$current_owner:$current_group" "$public_html"
+    chown -R "$current_owner:$current_owner" "$public_html"
+    chown "$current_owner:$current_group" "$public_html"
     chmod -R 750 "$public_html"
     find "$public_html" -type f -exec chmod 640 {} \;
 
